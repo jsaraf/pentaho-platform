@@ -38,9 +38,6 @@
   padding: 0px 0px 10px 0px;
 }
 
-.schedule-dialog-content {
-}
-
 .schedulerPerspective-wrapper {
   margin: 0 auto;
 }
@@ -189,20 +186,6 @@
 .mantle-perspective-toggle-down-hovering {
   border-top: 2px solid #1973bc;
   color: white;
-}
-
-#mainMenubar {
-  padding: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /*background: #0F2B5B; previous Sapphire theme color */
-  background: #f8f8f6;
-}
-
-.mantle-perspective-switcher {
-  height: 28px;
 }
 
 .puc-logo {
@@ -359,10 +342,6 @@
 
 .mantle-white-tab-background {
   background-color: white;
-}
-
-#mainToolbar {
-  padding: 0px 0px 0px 0px;
 }
 
 .puc-horizontal-split-panel {
@@ -849,20 +828,7 @@ a:active, a:hover {
   text-align: left;
 }
 
-.schedulesPanel .toolbar {
-  background: none;
-  border: 0;
-  margin-bottom: 5px;
-}
-
-.schedulesPanel .pentaho-table th {
-  font-size: 12px;
-  border-spacing: 0;
-  color: #FFF;
-  padding: 8px 10px 10px 10px;
-  font-weight: normal;
-}
-
+/* region custom-dropdown */
 .custom-dropdown {
   width: 254px;
   cursor: hand;
@@ -902,94 +868,6 @@ a:active, a:hover {
 .custom-dropdown:hover .custom-dropdown-label,
 .custom-dropdown:focus-visible .custom-dropdown-label {
   color: #FFFFFF;
-}
-
-#pucUserDropDown {
-  float: right;
-  display: block;
-  padding: 3px;
-}
-
-#pucUserDropDown .custom-dropdown {
-  width: auto;
-  min-width: 105px;
-}
-
-#pucUserDropDown .custom-dropdown-arrow {
-  width: 30px;
-  background-image: url('images/pentaho_dropdown_arrow.png');
-  background-position: left center;
-}
-
-#pucUserDropDown .custom-dropdown-label {
-  text-align: right;
-  font-size: 18px;
-}
-
-#pucUserDropDown .custom-dropdown-pressed .custom-dropdown-arrow {
-  background-image: url('images/pentaho_dropdown_arrow.png');
-}
-
-#pucUserDropDown .custom-dropdown-arrow .gwt-Label {
-  width: 30px;
-}
-
-#pucPerspectives .custom-dropdown {
-  width: auto;
-  min-width: 115px;
-}
-
-#pucPerspectives .custom-dropdown-arrow {
-  width: 30px;
-  background-image: url('images/pentaho_dropdown_arrow.png');
-  background-position: left center;
-}
-
-#pucPerspectives .custom-dropdown-label {
-  text-align: left;
-  font-size: 24px;
-}
-
-#pucPerspectives .custom-dropdown-pressed .custom-dropdown-arrow {
-  background-image: url('images/pentaho_dropdown_arrow.png');
-}
-
-#pucPerspectives .custom-dropdown-arrow .gwt-Label {
-  width: 30px;
-}
-
-#pucHeader .custom-dropdown-pressed .custom-dropdown-label {
-    background: #FFF;
-    color: #333;
-}
-
-#pucPerspectives {
-  padding-left: 15px;
-  display: block;
-  float: left;
-}
-
-#pucMenuBar {
-  display: block;
-}
-
-#pucToolBar {
-  display: block;
-  float: left;
-  max-width: 380px;
-  margin-top: 4px;
-}
-
-#pucHeader .gwt-MenuBar-horizontal .gwt-MenuItem {
-  color: #414141;
-  font-size: 13px;
-  font-family: OpenSansLight;
-  line-height: 20px;
-  padding: 5px 15px;
-}
-
-#pucContent {
-  /*  box-shadow: 0px 0px 1px 2px #a9a2ad; */
 }
 
 .custom-dropdown-popup {
@@ -1035,7 +913,7 @@ div#customDropdownPopupMajor .gwt-MenuBar-vertical .gwt-MenuItem:hover:not(.gwt-
   background-color: #e0e0e0;
 }
 
-.custom-dropdown-popup  .gwt-MenuBar-vertical {
+.custom-dropdown-popup .gwt-MenuBar-vertical {
   padding: 10px 0px 0px 0px;
   border-left: 1px solid #CCC;
   border-right: 1px solid #CCC;
@@ -1052,77 +930,150 @@ div#customDropdownPopupMajor .gwt-MenuBar-vertical .gwt-MenuItem:hover:not(.gwt-
 .custom-dropdown-pressed .custom-dropdown-arrow {
   background-image: url('images/dropdown_arrow_blue.png');
 }
+/* endregion custom-dropdown */
 
-#generated-content-location {
-  border-radius: 4px 4px 4px 4px;
+/* region #pucWrapper et al. */
+#pucWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.schedule-label {
-  margin-top: unset;
-  margin-bottom: unset;
-  color: #666666;
-}
-
-.schedule-output-location-dialog > div > * {
-  height: auto !important;
-}
-
-.schedule-output-location-dialog .dialog-content > table > tbody > tr {
+#pucHeader {
   flex: none;
-}
-
-#schedule-name-input {
-  width: unset;
-  margin-bottom: unset;
-}
-
-.schedule-timestamp-listbox {
-  margin-left: unset;
-  margin-bottom: unset;
-  min-width: 200px;
-  width: unset;
-}
-
-.schedule-name-panel > tbody > tr {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: var(--layout-gap-v) var(--layout-gap-h);
-  display: flex !important;
+  align-items: center;
+
+  background: #f8f8f6;
+  filter: none;
+  -webkit-box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0 5px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  position: relative;
+  border-top: 4px solid #cc0000;
 }
 
-.schedule-name-panel > tbody > tr > td:first-child > * {
-  flex: auto;
-}
-
-.schedule-name-panel > tbody > tr > td:last-child {
+#pucMenuBar {
   flex: none;
-}
-
-.schedule-caption-panel {
-  margin-top: unset;
-}
-
-button#schedule-dialog-select-button {
-  flex: auto;
-}
-
-.dialog-content #generated-content-location {
-  flex: auto;
-  margin-bottom: unset;
-  width: 100% !important;
-}
-
-.schedule-dialog-button-panel {
-  padding-right: 3px;
-  padding-bottom: 2px;
   width: 100%;
 }
 
-#pucHeader .gwt-MenuBar-horizontal .gwt-MenuItem-selected {
+#pucPerspectives {
+  flex: none;
+  padding: 3px var(--focus-ring-padding);
+}
+
+#pucPerspectives .mantle-perspective-switcher {
+  height: auto;
+}
+
+#pucToolBar {
+  /* Toolbar buttons and spacers are integrated into the overall PUC header flex layout. */
+  display: contents;
+}
+
+#pucUserDropDown {
+  flex: none;
+  /* Align flex item at right. */
+  margin-left: auto;
+  padding: 3px var(--focus-ring-padding);
+}
+
+#pucContent {
+  position: unset;
+  flex: auto;
+}
+/* endregion #pucWrapper et al. */
+
+/* region Main Menubar */
+#mainMenubar {
+  padding: 0;
+  background: #f8f8f6;
+}
+
+#mainMenubar > table {
+  border: 0 none;
+  border-spacing: 0;
+}
+
+#mainMenubar .gwt-MenuItem {
+  color: #414141;
+  font-size: 13px;
+  font-family: OpenSansLight;
+  line-height: 20px;
+  padding: 5px 15px;
+}
+
+#mainMenubar .gwt-MenuItem-selected {
   background: #cc0000;
   border: 0 none;
   color: #FFF;
 }
+/* endregion Main Menubar */
 
+/* region Perspectives Dropdown */
+#pucPerspectives .custom-dropdown {
+  width: auto;
+  min-width: 115px;
+}
+
+#pucPerspectives .custom-dropdown-arrow {
+  width: 30px;
+  background-image: url('images/pentaho_dropdown_arrow.png');
+  background-position: left center;
+}
+
+#pucPerspectives .custom-dropdown-label {
+  text-align: left;
+  font-size: 24px;
+}
+
+#pucPerspectives .custom-dropdown-pressed .custom-dropdown-arrow {
+  background-image: url('images/pentaho_dropdown_arrow.png');
+}
+
+#pucPerspectives .custom-dropdown-arrow .gwt-Label {
+  width: 30px;
+}
+/* endregion Perspectives Dropdown */
+
+/* region User Dropdown */
+#pucUserDropDown .custom-dropdown {
+  width: auto;
+  min-width: 105px;
+}
+
+#pucUserDropDown .custom-dropdown-arrow {
+  width: 30px;
+  background-image: url('images/pentaho_dropdown_arrow.png');
+  background-position: left center;
+}
+
+#pucUserDropDown .custom-dropdown-label {
+  text-align: right;
+  font-size: 18px;
+}
+
+#pucUserDropDown .custom-dropdown-pressed .custom-dropdown-arrow {
+  background-image: url('images/pentaho_dropdown_arrow.png');
+}
+
+#pucUserDropDown .custom-dropdown-arrow .gwt-Label {
+  width: 30px;
+}
+/* endregion User Dropdown */
+
+/* region PUC Header custom-dropdown shared */
+#pucHeader .custom-dropdown-pressed .custom-dropdown-label {
+  background: #FFF;
+  color: #333;
+}
+/* endregion */
+
+/* region gwt-MenuBar-vertical */
 .gwt-MenuBar-vertical {
   background-color: #FFF;
   margin-top: 0px;
@@ -1169,17 +1120,17 @@ button#schedule-dialog-select-button {
 }
 
 .gwt-MenuBar-vertical tr:hover .gwt-MenuItem-selected, .gwt-MenuBar-vertical tr:hover .subMenuIcon-selected {
-    background-color: #cc0000;
-    color: #FFF;
+  background-color: #cc0000;
+  color: #FFF;
 }
 
 .gwt-MenuBar-vertical .gwt-MenuItem-selected:hover {
   background-color: #cc0000;
-    color: #FFF;
+  color: #FFF;
 }
 
 .gwt-MenuBar-vertical .subMenuIcon-selected {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .gwt-MenuBar-vertical .gwt-MenuItem-selected {
@@ -1222,66 +1173,76 @@ button#schedule-dialog-select-button {
   background-size: 9px 7px;
   background-repeat: no-repeat;
 }
+/* endregion gwt-MenuBar-vertical */
 
-/* == == == */
+/* region Main Toolbar */
+.mainToolbar-Wrapper,
+#mainToolbarWrapper,
+#mainToolbarWrapper > tbody,
+#mainToolbarWrapper > tbody > tr,
+#mainToolbarWrapper > tbody > tr > td,
+#mainToolbarWrapper > tbody > tr > td > div,
+#mainToolbar,
+#mainToolbar > tbody > tr > td > table {
+  display: contents;
+}
+
+#mainToolbar .spacer {
+  /* This flex scheme allows the space to shrink before wrapping kicks in. */
+  flex: 1 1 0;
+  min-width: 0;
+
+  /* Passed by GWT via inline-style */
+  --flex-max-width: initial;
+  max-width: var(--flex-max-width, 10px);
+}
+
+#mainToolbar :is(
+  .toolbar-button, .toolbar-button-disabled,
+  .toolbar-toggle-button, .toolbar-toggle-button-disabled) img {
+  height: calc(1em * 32/14);
+  width: calc(1em * 32/14);
+  background-size: contain;
+}
+
 #mainToolbar #openButton .toolbar-button img {
-  background: url('images/open_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/open_32.png');
 }
 
 #mainToolbar #newButton .toolbar-button img {
-  background: url('images/new_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/new_32.png');
 }
 
 #mainToolbar #editContentButton .toolbar-toggle-button img {
-  background: url('images/editContent_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/editContent_32.png');
 }
 
 #mainToolbar #editContentButton .toolbar-toggle-button-disabled img {
-  background: url('images/editContent_32_disabled.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/editContent_32_disabled.png');
 }
 
 #mainToolbar #saveButton .toolbar-button img {
-  background: url('images/save_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/save_32.png');
 }
 
 #mainToolbar #saveButton .toolbar-button-disabled img {
-  background: url('images/save_32_disabled.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/save_32_disabled.png');
 }
 
 #mainToolbar #saveAsButton .toolbar-button img {
-  background: url('images/saveAs_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/saveAs_32.png');
 }
 
 #mainToolbar #saveAsButton .toolbar-button-disabled img {
-  background: url('images/saveAs_32_disabled.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/saveAs_32_disabled.png');
 }
 
 #mainToolbar #showBrowserButton .toolbar-toggle-button img {
-  background: url('../../images/browser_hide_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('../../images/browser_hide_32.png');
 }
 
 #mainToolbar #showBrowserButton .toolbar-toggle-button-down img {
-  background: url('../../images/browser_show_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('../../images/browser_show_32.png');
 }
 
 #mainToolbar #newAnalysisButton_img .gwt-Image {
@@ -1291,15 +1252,11 @@ button#schedule-dialog-select-button {
 }
 
 #mainToolbar #printButton .toolbar-button img {
-  background: url('images/print_32.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/print_32.png');
 }
 
 #mainToolbar #printButton .toolbar-button-disabled img {
-  background: url('images/print_32_disabled.png');
-  height: 32px;
-  width: 32px;
+  background-image: url('images/print_32_disabled.png');
 }
 
 .toolbar-button-disabled {
@@ -1559,12 +1516,4 @@ hr {
   font-family: opensansregular, Helvetica, Arial, Sans serif;
   font-weight: normal;
   font-size: 14px;
-}
-
-.schedule-params-dialog {
-  padding: 0 var(--dialog-padding) var(--dialog-padding);
-}
-
-.schedule-params-dialog > div > table > tbody > tr:first-child > td:nth-child(2) > div > div {
-  padding: var(--dialog-padding) 0;
 }
